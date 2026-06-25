@@ -32,4 +32,20 @@ pipeline{
             }
         }
     }
+    post{
+        success{
+            emailext(
+                to: 'mayankchhimwal1999@gmail.com , gagan.patwal.1@gmail.com , lalitmudila09@gmail.com', 
+                subject: "Build Successful",
+                body: "Good News: Your build is successful"
+                )
+        }
+        failure{
+            emailext(
+                to: 'mayankchhimwal1999@gmail.com , gagan.patwal.1@gmail.com , lalitmudila09@gmail.com', 
+                subject: "Build Failed",
+                body: "Bad News: Your build is Failed"
+                )
+        }
+    }
 }
