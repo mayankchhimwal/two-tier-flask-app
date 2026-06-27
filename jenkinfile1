@@ -36,15 +36,15 @@ pipeline{
     }
     post{
         success{
-            mail(
-                to: "gagan.patwal.1@gmail.com, gagan.patwal.1@outlook.com", 
+             emailext(
+                to: "gagan.patwal.2@gmail.com, gagan.patwal.1@outlook.com", 
                 subject: "Build Successful",
                 body: "Good News: Your build is successful"
                 )
         }
         failure{
             emailext(
-                to: 'gagan.patwal.1@outlook.com, gagan.patwal.1@gmail.com',  
+                to: "gagan.patwal.1@outlook.com, gagan.patwal.1@gmail.com",  
                 subject: "Build Failed",
                 body: "Bad News: Your build is Failed"
                 )
