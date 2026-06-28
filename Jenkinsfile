@@ -35,8 +35,10 @@ pipeline{
     post{
         always {
             echo 'Cleaning workspace...'
+            steps{
             sh "docker rm -f $(docker ps -aq)"
             sh "docker rmi -f $(docker images -aq)"
+            }
             cleanWs()
         }
         success{
