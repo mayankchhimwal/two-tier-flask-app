@@ -33,6 +33,10 @@ pipeline{
         }
     }
     post{
+        always {
+            echo 'Cleaning workspace...'
+            cleanWs()
+        }
         success{
             emailext(
                 to: "mayankchhimwal1999@gmail.com, gagan.patwal.1@gmail.com, lalitmudila09@gmail.com",
